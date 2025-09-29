@@ -87,13 +87,14 @@ const Dashboard: React.FC = () => {
     <div className="space-y-6">
       {/* Hero Section with image + right sidebar */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left: Hero Image */}
+        {/* Left: Image */}
         <div className="relative lg:col-span-2 h-[400px]">
           <img
             src="https://plus.unsplash.com/premium_photo-1661508620175-3ae20da61cda?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3MlMjBtYW58ZW58MHx8MHx8fDA%3D"
             alt="Business Overview"
             className="absolute inset-0 w-full h-full object-cover rounded-2xl"
           />
+          {/* Overlay */}
           <div className="absolute inset-0 bg-black/40 rounded-2xl" />
 
           {/* Overlapping Features Widget */}
@@ -102,7 +103,7 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        {/* Right: Sidebar Summary Section */}
+        {/* Right: Sidebar Summary */}
         <div className="space-y-6">
           {/* Balance Card */}
           <Card className="p-6">
@@ -185,7 +186,7 @@ const Dashboard: React.FC = () => {
         </div>
       </div>
 
-      {/* Push main dashboard content below overlap */}
+      {/* Push content down so widget overlap doesn't clash */}
       <div className="pt-32">
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
@@ -230,6 +231,7 @@ const Dashboard: React.FC = () => {
 
         {/* Charts Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+          {/* Revenue Chart */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -241,7 +243,10 @@ const Dashboard: React.FC = () => {
               </h3>
               <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={chartData}>
-                  <CartesianGrid strokeDasharray="3 3" />
+                  <CartesianGrid
+                    strokeDasharray="3 3"
+                    className="stroke-gray-200 dark:stroke-gray-700"
+                  />
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip />
@@ -258,6 +263,7 @@ const Dashboard: React.FC = () => {
             </Card>
           </motion.div>
 
+          {/* Traffic Pie Chart */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -348,6 +354,13 @@ const Dashboard: React.FC = () => {
             </div>
           </Card>
         </motion.div>
+
+        {/* Additional Widgets Showcase */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+          <Card className="p-6">Widget Example A</Card>
+          <Card className="p-6">Widget Example B</Card>
+          <Card className="p-6">Widget Example C</Card>
+        </div>
       </div>
     </div>
   );
