@@ -26,7 +26,7 @@ import {
   pieChartData,
   recentOrders,
 } from "../data/mockData";
-import FeaturesWidget from "../widgets/FeaturesWidget"; // example marketplace widget import
+import FeaturesWidget from "../components/FeaturesWidget"; // example marketplace widget import
 
 // ---------------- StatCard ----------------
 const StatCard: React.FC<{
