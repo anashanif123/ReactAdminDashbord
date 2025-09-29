@@ -88,7 +88,7 @@ const Dashboard: React.FC = () => {
       {/* Hero Section with full-bleed image */}
       <div className="relative w-full h-[400px]">
         <img
-          src="/images/business-hero.jpg" // replace with your actual image
+          src="https://plus.unsplash.com/premium_photo-1661508620175-3ae20da61cda?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3MlMjBtYW58ZW58MHx8MHx8fDA%3D" // replace with your actual image
           alt="Business Overview"
           className="absolute inset-0 w-full h-full object-cover"
         />
